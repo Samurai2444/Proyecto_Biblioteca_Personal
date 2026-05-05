@@ -330,6 +330,39 @@ const AdminBooks = () => {
                       <option value="reservado">Reservado</option>
                     </select>
                   </div>
+                  <div className="mt-4">
+                    <label className="block text-xs font-bold text-gray-500 uppercase">
+                      Descripción
+                    </label>
+                    <textarea
+                      className="w-full border p-2 rounded-lg"
+                      rows="3"
+                      value={newBook.descripcion}
+                      onChange={(e) =>
+                        setNewBook({ ...newBook, descripcion: e.target.value })
+                      }
+                    ></textarea>
+                  </div>
+
+                  <div className="mt-4 flex items-center gap-2">
+                    <input
+                      type="checkbox"
+                      id="publico"
+                      checked={newBook.compartido_publico}
+                      onChange={(e) =>
+                        setNewBook({
+                          ...newBook,
+                          compartido_publico: e.target.checked,
+                        })
+                      }
+                    />
+                    <label
+                      htmlFor="publico"
+                      className="text-sm text-gray-700 font-medium cursor-pointer"
+                    >
+                      Compartir públicamente
+                    </label>
+                  </div>
                 </div>
                 <button
                   type="submit"
