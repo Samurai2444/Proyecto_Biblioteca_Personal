@@ -282,6 +282,20 @@ const AdminBooks = () => {
                     />
                   </div>
                   <div>
+                    <label className="block text-xs font-bold text-gray-500 uppercase">
+                      URL Portada
+                    </label>
+                    <input
+                      type="text"
+                      className="w-full border p-2 rounded-lg"
+                      placeholder="https://..."
+                      value={newBook.portadaUrl}
+                      onChange={(e) =>
+                        setNewBook({ ...newBook, portadaUrl: e.target.value })
+                      }
+                    />
+                  </div>
+                  <div>
                     <label className="block text-xs font-bold text-gray-500 uppercase mb-1">
                       Año
                     </label>
@@ -296,6 +310,25 @@ const AdminBooks = () => {
                         })
                       }
                     />
+                  </div>
+                  <div>
+                    <label className="block text-xs font-bold text-gray-500 uppercase">
+                      Estado
+                    </label>
+                    <select
+                      className="w-full border p-2 rounded-lg bg-white"
+                      value={newBook.estado_publicacion}
+                      onChange={(e) =>
+                        setNewBook({
+                          ...newBook,
+                          estado_publicacion: e.target.value,
+                        })
+                      }
+                    >
+                      <option value="publicado">Publicado</option>
+                      <option value="prestado">Prestado</option>
+                      <option value="reservado">Reservado</option>
+                    </select>
                   </div>
                 </div>
                 <button
