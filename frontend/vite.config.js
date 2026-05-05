@@ -1,17 +1,20 @@
 import { defineConfig } from "vite";
 import react, { reactCompilerPreset } from "@vitejs/plugin-react";
 import babel from "@rolldown/plugin-babel";
-import tailwindcss from '@tailwindcss/vite'
-
+import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
-  plugins: [react(), tailwindcss(), babel({ presets: [reactCompilerPreset()] })],
+  plugins: [
+    react(),
+    tailwindcss(),
+    babel({ presets: [reactCompilerPreset()] }),
+  ],
   server: {
     host: "0.0.0.0",
-    allowedHosts: ["frontend", "localhost", ".localhost"],
+    allowedHosts: true,
     proxy: {
       "/api": {
-        target: "http://127.0.0.1:8000",
+        target: "https://independent-alignment-production-5c3d.up.railway.app",
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api/, "") || "/",
       },
