@@ -356,6 +356,7 @@ const AdminBooks = () => {
                         })
                       }
                     />
+                    <hr></hr>
                     <label
                       htmlFor="publico"
                       className="text-sm text-gray-700 font-medium cursor-pointer"
